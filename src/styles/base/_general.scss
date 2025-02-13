@@ -1,4 +1,24 @@
-h1, h2, h3, h4, h5, h6, ul {
-    margin: 0;
-    padding: 0;
+@use "../helpers/functions" as *;
+@use "../helpers/mixins" as *;
+@use "../helpers/media" as *;
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+ul {
+  margin: 0;
+  padding: 0;
+}
+body {
+  padding: 100px;
+  p {
+    @include fluid-text(48, 16);
+    width: rem(100);
+    @include mobile {
+      background-color: red;
+    }
+  }
 }
