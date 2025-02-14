@@ -2452,6 +2452,61 @@ __metadata:
   languageName: node
   linkType: hard
 
+"Aliaksandr Bykouski@workspace:.":
+  version: 0.0.0-use.local
+  resolution: "Aliaksandr Bykouski@workspace:."
+  dependencies:
+    "@babel/core": "npm:^7.17.5"
+    "@babel/eslint-parser": "npm:^7.17.0"
+    "@babel/preset-env": "npm:^7.16.11"
+    "@babel/register": "npm:^7.17.0"
+    babel-loader: "npm:^8.2.3"
+    bem-tools-core: bem-tools/bem-tools-core
+    bem-tools-create: bem-tools/bem-tools-create
+    browser-sync: "npm:^2.27.7"
+    del: "npm:^6.0.0"
+    dev: "npm:^0.1.3"
+    eslint: "npm:^8.11.0"
+    gulp: "npm:^4.0.2"
+    gulp-autoprefixer: "npm:^8.0.0"
+    gulp-clean-css: "npm:^4.3.0"
+    gulp-debug: "npm:^4.0.0"
+    gulp-favicons: "npm:^3.0.0"
+    gulp-file-include: "npm:^2.3.0"
+    gulp-group-css-media-queries: "npm:^1.2.2"
+    gulp-if: "npm:^3.0.0"
+    gulp-imagemin: "npm:^7.1.0"
+    gulp-newer: "npm:^1.4.0"
+    gulp-plumber: "npm:^1.2.1"
+    gulp-rename: "npm:^2.0.0"
+    gulp-replace: "npm:^1.1.3"
+    gulp-sass: "npm:^5.1.0"
+    gulp-sourcemaps: "npm:^3.0.0"
+    gulp-svg-sprite: "npm:^1.5.0"
+    gulp-watch: "npm:^5.0.1"
+    gulp-webp: "npm:^4.0.1"
+    husky: "npm:^7.0.4"
+    imagemin-giflossy: "npm:^5.1.10"
+    imagemin-jpeg-recompress: "npm:^7.0.0"
+    imagemin-mozjpeg: "npm:^9.0.0"
+    imagemin-pngquant: "npm:^9.0.0"
+    imagemin-webp: "npm:^6.0.0"
+    imagemin-zopfli: "npm:^7.0.0"
+    lint-staged: "npm:^12.3.5"
+    postcss: "npm:^8.4.8"
+    postcss-scss: "npm:^4.0.3"
+    require-dir: "npm:^1.2.0"
+    sass: "npm:^1.49.9"
+    stylelint: "npm:^14.5.3"
+    stylelint-config-standard-scss: "npm:^3.0.0"
+    stylelint-order: "npm:^5.0.0"
+    stylelint-selector-bem-pattern: "npm:^2.1.1"
+    webpack: "npm:^5.70.0"
+    webpack-stream: "npm:^7.0.0"
+    yargs: "npm:^17.3.1"
+  languageName: unknown
+  linkType: soft
+
 "abbrev@npm:^3.0.0":
   version: 3.0.0
   resolution: "abbrev@npm:3.0.0"
@@ -8035,61 +8090,6 @@ bem-tools-create@bem-tools/bem-tools-create:
   checksum: 10c0/6eaacf92519ef9963cec83d4c716ae174aad0bb6427794058c86d6300559016633a97903457aaeb5485de98c710af86d4941e8b20c498f7b7cba14f93ba90065
   languageName: node
   linkType: hard
-
-"gulp-scss-starter@workspace:.":
-  version: 0.0.0-use.local
-  resolution: "gulp-scss-starter@workspace:."
-  dependencies:
-    "@babel/core": "npm:^7.17.5"
-    "@babel/eslint-parser": "npm:^7.17.0"
-    "@babel/preset-env": "npm:^7.16.11"
-    "@babel/register": "npm:^7.17.0"
-    babel-loader: "npm:^8.2.3"
-    bem-tools-core: bem-tools/bem-tools-core
-    bem-tools-create: bem-tools/bem-tools-create
-    browser-sync: "npm:^2.27.7"
-    del: "npm:^6.0.0"
-    dev: "npm:^0.1.3"
-    eslint: "npm:^8.11.0"
-    gulp: "npm:^4.0.2"
-    gulp-autoprefixer: "npm:^8.0.0"
-    gulp-clean-css: "npm:^4.3.0"
-    gulp-debug: "npm:^4.0.0"
-    gulp-favicons: "npm:^3.0.0"
-    gulp-file-include: "npm:^2.3.0"
-    gulp-group-css-media-queries: "npm:^1.2.2"
-    gulp-if: "npm:^3.0.0"
-    gulp-imagemin: "npm:^7.1.0"
-    gulp-newer: "npm:^1.4.0"
-    gulp-plumber: "npm:^1.2.1"
-    gulp-rename: "npm:^2.0.0"
-    gulp-replace: "npm:^1.1.3"
-    gulp-sass: "npm:^5.1.0"
-    gulp-sourcemaps: "npm:^3.0.0"
-    gulp-svg-sprite: "npm:^1.5.0"
-    gulp-watch: "npm:^5.0.1"
-    gulp-webp: "npm:^4.0.1"
-    husky: "npm:^7.0.4"
-    imagemin-giflossy: "npm:^5.1.10"
-    imagemin-jpeg-recompress: "npm:^7.0.0"
-    imagemin-mozjpeg: "npm:^9.0.0"
-    imagemin-pngquant: "npm:^9.0.0"
-    imagemin-webp: "npm:^6.0.0"
-    imagemin-zopfli: "npm:^7.0.0"
-    lint-staged: "npm:^12.3.5"
-    postcss: "npm:^8.4.8"
-    postcss-scss: "npm:^4.0.3"
-    require-dir: "npm:^1.2.0"
-    sass: "npm:^1.49.9"
-    stylelint: "npm:^14.5.3"
-    stylelint-config-standard-scss: "npm:^3.0.0"
-    stylelint-order: "npm:^5.0.0"
-    stylelint-selector-bem-pattern: "npm:^2.1.1"
-    webpack: "npm:^5.70.0"
-    webpack-stream: "npm:^7.0.0"
-    yargs: "npm:^17.3.1"
-  languageName: unknown
-  linkType: soft
 
 "gulp-sourcemaps@npm:1.6.0":
   version: 1.6.0

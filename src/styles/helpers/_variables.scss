@@ -1,39 +1,43 @@
-// :root {
-//   --color-light: #ffffff;
+@import "functions";
+@import "mixins";
+@import "media";
 
-//   --color-dark: #141414;
-//   --color-dark-10: #1a1a1a;
-//   --color-dark-15: #262626;
-//   --color-dark-20: #333333;
-//   --color-dark-40: #666666;
+:root {
+  --color-light: #ffffff;
 
-//   --color-gray-50: #7e7e81;
-//   --color-gray-60: #98989a;
+  --color-dark: #141414;
+  --color-dark-10: #1a1a1a;
+  --color-dark-15: #262626;
+  --color-dark-20: #333333;
+  --color-dark-40: #666666;
 
-//   --color-accent: #ffd11a;
-//   --color-red: #ff5500;
+  --color-gray-50: #7e7e81;
+  --color-gray-60: #98989a;
 
-//   --gradient: linear-gradient(
-//     45deg,
-//     var(--color-dark-15) 64%,
-//     var(--color-accent) 136%
-//   );
+  --color-accent: #ffd11a;
+  --color-red: #ff5500;
 
-//   --border: #{rem(1, 16)} solid var(--color-dark-15);
+  --gradient: linear-gradient(
+    45deg,
+    var(--color-dark-15) 64%,
+    var(--color-accent) 136%
+  );
 
-//   --shadow: 0 0 0 #{rem(3, 16)} #191919;
+  --border: #{rem(1)} solid var(--color-dark-15);
 
-//   --font-family-base: "Inter", sans-serif;
-//   --font-family-accent: "Kumbh Sans", sans-serif;
+  --shadow: 0 0 0 #{rem(3)} #191919;
 
-//   --container-width: #{rem(1600)};
-//   --container-padding-x: #{rem(16)};
+  --font-family-base: "Inter", sans-serif;
+  --font-family-accent: "Kumbh Sans", sans-serif;
 
-//   --transition-duration: 0.2s;
+  --container-width: #{rem(1600)};
+  --container-padding-x: #{rem(16)};
 
-//   --100vw: calc(100vw - var(--scrollbar-width));
+  --transition-duration: 0.2s;
 
-//   @include laptop {
-//     --container-width: #{rem(1280)};
-//   }
-// }
+  --100vw: calc(100vw - var(--scrollbar-width));
+
+  @include laptop {
+    --container-width: #{rem(1280)};
+  }
+}

@@ -1,0 +1,24 @@
+@import "../helpers/functions";
+@import "../helpers/mixins";
+@import "../helpers/media";
+
+.container {
+  max-width: calc(var(--container-width) + var(--container-padding-x) * 2);
+  margin-inline: auto;
+  padding-inline: var(--container-padding-x);
+}
+
+.visually-hiden {
+  @include visually-hidden;
+}
+.hiden-mobile {
+  @include mobile {
+    display: none !important;
+  }
+}
+
+.visible-mobile {
+  @include mobile-above {
+    display: none !important;
+  }
+}
