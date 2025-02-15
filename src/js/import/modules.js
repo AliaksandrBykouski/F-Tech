@@ -1,2 +1,2 @@
-import "%modules%/header/header";
+import "%modules%/header/header.js";
 import "%modules%/footer/footer";
