@@ -44,6 +44,7 @@
     color: var(--color-accent);
   }
   &.is-active {
+    //ворочаем при клике
     .burger-button__line {
       &:nth-child(1) {
         rotate: 45deg;
@@ -66,6 +67,7 @@
     transition-duration: var(--transition-duration);
 
     &:last-child {
+      //умееньшаем ширину нижней палочки
       width: 55%;
       align-self: end;
     }

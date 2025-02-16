@@ -3,17 +3,23 @@
 @use "../helpers/media" as *;
 
 html {
+  // добавляем этот класс чтобы при открытии кнопки бургер не было скролла
   &.is-lock {
     overflow: hidden;
   }
 }
 body {
   @include fluid-text(18, 14);
-
+  display: flex;
+  flex-direction: column;
   font-family: var(--font-family-base);
   letter-spacing: 0.03em;
   color: var(--color-gray-50);
   background-color: var(--color-dark);
+}
+
+main {
+  flex-grow: 1; //чтобы прибить футер вниз
 }
 
 h1,
@@ -102,6 +108,8 @@ a {
 }
 a,
 button {
+  //  чтобы у кнопок с aria-label была больше кликабельная зона
+  //  рекомендуется 44px
   &[aria-label] {
     position: relative;
 

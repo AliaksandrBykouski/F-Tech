@@ -18,6 +18,7 @@
 }
 
 .visible-mobile {
+  //видно  олько на мобилке
   @include mobile-above {
     display: none !important;
   }
