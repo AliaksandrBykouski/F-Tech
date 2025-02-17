@@ -1,0 +1,143 @@
+@import "../../../styles/helpers/functions";
+@import "../../../styles/helpers/mixins";
+@import "../../../styles/helpers/variables";
+
+.hero {
+  &__main {
+    display: grid;
+    grid-template-columns: 60% auto;
+    grid-template-areas:
+      "body resourses-preview"
+      "metrics resourses-preview";
+  }
+  &__body {
+    grid-area: body;
+    padding: rem(150) rem(50) rem(100) 0;
+  }
+  &__subtitle {
+    @include fluid-text(30, 18);
+    font-family: var(--font-family-accent);
+    font-weight: 500;
+    color: var(--color-dark-40);
+
+    &:not(:last-child) {
+      margin-bottom: rem(30);
+    }
+  }
+  &__title {
+    &:not(:last-child) {
+      margin-bottom: rem(20);
+    }
+  }
+  &__metrics {
+    grid-area: metrics;
+    border-top: var(--border);
+  }
+  &__resourses-preview {
+    grid-area: resourses-preview;
+    padding-left: rem(80);
+    padding-bottom: rem(80);
+    border-left: var(--border);
+    background: url("../img/resources-preview/bg.png") 0 0 / cover no-repeat;
+  }
+  &__advantages {
+    border-block: var(--border);
+    &-list {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+    }
+    &-item {
+      --paddingX: #{rem(80)};
+      padding-block: rem(50);
+
+      &:not(:first-child) {
+        padding-left: var(--paddingX);
+      }
+      &:not(:last-child) {
+        padding-right: var(--paddingX);
+        border-right: var(--border);
+      }
+    }
+  }
+}
+.metrics {
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+  &__item {
+    display: flex;
+    flex-direction: column-reverse;
+    row-gap: rem(10);
+    padding: rem(50);
+
+    &:first-child {
+      padding-left: 0;
+    }
+    &:not(:last-child) {
+      border-right: var(--border);
+    }
+  }
+  &__value {
+    font-weight: 600;
+  }
+  &__sign {
+    color: var(--color-accent);
+  }
+}
+.resourses-preview {
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  align-items: start;
+  row-gap: rem(30);
+  &__body {
+    display: grid;
+    row-gap: rem(14);
+  }
+}
+.team {
+  --personImageSize: #{rem(60)};
+
+  display: flex;
+  padding: rrem(10);
+  background-color: var(--color-dark-10);
+  border-radius: rem(100);
+  &__person {
+    width: var(--personImageSize);
+    background-color: var(--color-dark-15);
+    border-radius: 50%;
+    border: rem(2) solid var(--color-dark-40);
+
+    &:not(:first-child) {
+      margin-left: calc(var(--personImageSize) / 4 * -1);
+    }
+  }
+}
+.advantages-card {
+  display: grid;
+  row-gap: rem(30);
+  &__link {
+    --circleSize: #{rem(52)}; //переменная для кружка
+    --circleMarginLeft: #{rem(20)}; // переменная для маржина
+    position: relative;
+    padding-right: calc(var(--circleMarginLeft) + var(--circleSize));
+    display: grid;
+    row-gap: rem(4);
+
+    &::after {
+      // создаем стрелку в желтом кружке
+      @include square(var(--circleSize)); // размер кружка
+      @include abs-y; // для позиционирования кружка
+      content: "";
+      right: 0;
+      background: url("../img/sprites/arrow-top-right-black.svg") center
+        no-repeat var(--color-accent);
+      border-radius: 50%;
+    }
+  }
+  &__details {
+    @include fluid-text(20, 14);
+    font-family: var(--font-family-accent);
+  }
+}
