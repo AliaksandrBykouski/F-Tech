@@ -4,15 +4,28 @@
 
 .hero {
   &__main {
-    display: grid;
-    grid-template-columns: 60% auto;
-    grid-template-areas:
-      "body resourses-preview"
-      "metrics resourses-preview";
+    @include tablet-above {
+      display: grid;
+      grid-template-columns: 60% auto;
+      grid-template-areas:
+        "body resourses-preview"
+        "metrics resourses-preview";
+    }
   }
   &__body {
     grid-area: body;
     padding: rem(150) rem(50) rem(100) 0;
+
+    @include laptop {
+      padding-top: rem(100);
+      padding-right: rem(40);
+    }
+
+    @include tablet {
+      padding-right: 0;
+      padding-top: rem(40);
+      padding-bottom: rem(30);
+    }
   }
   &__subtitle {
     @include fluid-text(30, 18);
@@ -23,15 +36,30 @@
     &:not(:last-child) {
       margin-bottom: rem(30);
     }
+    @include mobile {
+      margin-bottom: rem(14);
+    }
   }
   &__title {
     &:not(:last-child) {
       margin-bottom: rem(20);
     }
+    @include mobile {
+      margin-bottom: rem(10);
+    }
   }
   &__metrics {
     grid-area: metrics;
-    border-top: var(--border);
+
+    @include tablet-above {
+      border-top: var(--border);
+    }
+    @include tablet {
+      &::before {
+        width: 100vw;
+        right: calc(var(--container-padding-x) * -1);
+      }
+    }
   }
   &__resourses-preview {
     grid-area: resourses-preview;
@@ -39,23 +67,51 @@
     padding-bottom: rem(80);
     border-left: var(--border);
     background: url("../img/resources-preview/bg.png") 0 0 / cover no-repeat;
+
+    @include laptop {
+      padding-left: rem(50);
+      padding-bottom: rem(50);
+    }
+    @include tablet-above {
+      border-left: var(--border);
+    }
+    @include tablet {
+      width: 100vw;
+      margin-left: calc(var(--container-padding-x) * -1);
+      padding: rem(100) rem(40) rem(40);
+      background: url("../img/resources-preview/bg_tablet.png") 0 0 / contain
+        no-repeat;
+    }
   }
   &__advantages {
     border-block: var(--border);
     &-list {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      @include tablet-above {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+      }
     }
     &-item {
       --paddingX: #{rem(80)};
       padding-block: rem(50);
-
-      &:not(:first-child) {
-        padding-left: var(--paddingX);
+      @include laptop {
+        --paddingX: #{rem(50)};
+        padding-block: rem(40);
       }
-      &:not(:last-child) {
-        padding-right: var(--paddingX);
-        border-right: var(--border);
+      @include tablet-above {
+        &:not(:first-child) {
+          padding-left: var(--paddingX);
+        }
+        &:not(:last-child) {
+          padding-right: var(--paddingX);
+          border-right: var(--border);
+        }
+      }
+      @include tablet {
+        padding-block: rem(30);
+        &:not(:last-child) {
+          border-bottom: var(--border);
+        }
       }
     }
   }
@@ -77,6 +133,14 @@
     &:not(:last-child) {
       border-right: var(--border);
     }
+    @include laptop {
+      padding: rem(30) rem(40);
+      row-gap: rem(2);
+    }
+    @include tablet {
+      row-gap: 0;
+      padding: rem(20);
+    }
   }
   &__value {
     font-weight: 600;
@@ -91,9 +155,20 @@
   justify-content: end;
   align-items: start;
   row-gap: rem(30);
+  @include laptop {
+    row-gap: rem(20);
+  }
   &__body {
     display: grid;
     row-gap: rem(14);
+    @include laptop {
+      row-gap: rem(6);
+    }
+  }
+  &__button {
+    @include mobile-s {
+      width: 100%;
+    }
   }
 }
 .team {
@@ -103,20 +178,47 @@
   padding: rrem(10);
   background-color: var(--color-dark-10);
   border-radius: rem(100);
+
+  @include laptop {
+    padding: rem(8);
+    --personImageSize: #{rem(50)};
+  }
+  @include tablet {
+    --personImageSize: #{rem(40)};
+  }
   &__person {
     width: var(--personImageSize);
     background-color: var(--color-dark-15);
     border-radius: 50%;
     border: rem(2) solid var(--color-dark-40);
-
+    @include laptop {
+      border-width: rem(1);
+    }
     &:not(:first-child) {
       margin-left: calc(var(--personImageSize) / 4 * -1);
+    }
+    @include laptop {
+      border-width: rem(1);
     }
   }
 }
 .advantages-card {
   display: grid;
   row-gap: rem(30);
+  @include laptop {
+    row-gap: rem(20);
+  }
+  @include mobile {
+    row-gap: rem(14);
+  }
+  &__image {
+    @include laptop {
+      width: rem(40);
+    }
+    @include mobile {
+      width: rem(30);
+    }
+  }
   &__link {
     --circleSize: #{rem(52)}; //переменная для кружка
     --circleMarginLeft: #{rem(20)}; // переменная для маржина
@@ -134,6 +236,14 @@
       background: url("../img/sprites/arrow-top-right-black.svg") center
         no-repeat var(--color-accent);
       border-radius: 50%;
+    }
+    @include laptop {
+      --circleSize: #{rem(44)};
+      --circleMarginLeft: #{rem(14)};
+      row-gap: rem(2);
+    }
+    @include mobile {
+      --circleSize: #{rem(40)};
     }
   }
   &__details {
