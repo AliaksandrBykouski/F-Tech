@@ -1,0 +1,124 @@
+@import "../../../styles/helpers/functions";
+@import "../../../styles/helpers/mixins";
+@import "../../../styles/helpers/variables";
+
+.section {
+  &__header {
+    padding-block: fluid(120, 40);
+    background-color: var(--color-dark-10);
+
+    &-info {
+      display: grid;
+      align-items: start;
+      row-gap: rem(16);
+
+      @include laptop {
+        row-gap: rem(10);
+      }
+    }
+  }
+  &__subtitle {
+    justify-self: start;
+  }
+  &__body {
+    border-block: var(--border);
+  }
+}
+.tag {
+  @include fluid-text(20, 14);
+
+  padding: rem(6) rem(10);
+  color: var(--color-light);
+  font-weight: 500;
+  background-color: var(--color-dark-20);
+  border-radius: rem(4);
+
+  @include laptop {
+    padding: rem(4) rem(8);
+  }
+}
+.list {
+  &__item {
+    &:not(:last-child) {
+      border-bottom: var(--border);
+    }
+  }
+}
+.tile {
+  padding: fluid(40, 24);
+  background-color: var(--color-dark-10);
+  border: var(--border);
+  border-radius: rem(12);
+
+  @include laptop {
+    border-radius: rem(10);
+  }
+}
+.card {
+  @include tablet-above {
+    display: grid;
+    grid-template-columns: 37.5% auto;
+  }
+
+  &__preview,
+  &__body {
+    padding: rem(80);
+
+    @include laptop {
+      padding: rem(60);
+    }
+  }
+  &__preview {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    row-gap: fluid(60, 20);
+    padding-left: 0;
+
+    @include tablet-above {
+      border-right: var(--border);
+    }
+
+    @include tablet {
+      padding-right: 0;
+      padding-block: rem(50);
+      border-bottom: var(--border);
+    }
+    &-main {
+      display: grid;
+      row-gap: fluid(50, 24);
+    }
+    &-icon {
+      width: fluid(80, 50);
+    }
+    &-info {
+      display: grid;
+      row-gap: fluid(16, 6);
+    }
+  }
+  &__body {
+    padding-right: 0;
+
+    @include tablet {
+      padding: rem(30) rem(16);
+    }
+  }
+  &__grid {
+    display: grid;
+
+    &-2-col {
+      grid-template-columns: repeat(2, 1fr);
+      gap: fluid(30, 10);
+
+      @include mobile {
+        grid-template-columns: 1fr;
+      }
+    }
+  }
+  &__cell {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    row-gap: fluid(20, 4);
+  }
+}
