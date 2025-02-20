@@ -16,12 +16,26 @@
         row-gap: rem(10);
       }
     }
-  }
-  &__subtitle {
-    justify-self: start;
-  }
-  &__body {
-    border-block: var(--border);
+    &-inner {
+      &:has(.section__link) {
+        display: grid;
+        align-items: center;
+        column-gap: 1rem;
+
+        @include mobile-above {
+          grid-template-columns: 1fr auto;
+        }
+        @include mobile {
+          row-gap: rem(30);
+        }
+      }
+    }
+    &__subtitle {
+      justify-self: start;
+    }
+    &__body {
+      border-block: var(--border);
+    }
   }
 }
 .tag {
@@ -32,6 +46,7 @@
   font-weight: 500;
   background-color: var(--color-dark-20);
   border-radius: rem(4);
+  justify-self: start;
 
   @include laptop {
     padding: rem(4) rem(8);
