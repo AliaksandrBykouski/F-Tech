@@ -127,6 +127,11 @@
       background-image: url("../img/sprites/arrow-top-right-yellow.svg");
     }
   }
+  &--yellow-eye {
+    &::after {
+      background-image: url("../img/sprites/eye-yellow.svg");
+    }
+  }
 }
 .logo {
   max-width: fluid(179, 126);

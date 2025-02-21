@@ -1,0 +1,32 @@
+@import "../../../styles/helpers/functions";
+@import "../../../styles/helpers/mixins";
+@import "../../../styles/helpers/variables";
+
+.download-info {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  column-gap: rem(50);
+
+  @include laptop {
+    column-gap: rem(30);
+  }
+
+  &__team {
+    background-color: var(--color-dark);
+    border-radius: rem(12);
+    justify-content: center;
+
+    &__person {
+      @include laptop {
+        width: rem(40);
+        height: rem(40);
+      }
+    }
+  }
+}
+
+.card__preview-extra-download {
+  display: flex;
+  justify-content: start;
+}

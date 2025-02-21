@@ -30,6 +30,7 @@ class Tabs {
   updateUI() {
     this.buttons.forEach((btn, index) => {
       btn.classList.toggle(this.activeClass, index === this.activeIndex);
+      btn.setAttribute("tabindex", index === this.activeIndex ? "0" : "-1");
     });
 
     this.contents.forEach((content, index) => {
@@ -40,11 +41,27 @@ class Tabs {
   onTabClick(index) {
     this.activeIndex = index;
     this.updateUI();
+    this.buttons[this.activeIndex].focus();
+  }
+
+  onKeyDown(event) {
+    if (event.key === "ArrowRight") {
+      this.activeIndex = (this.activeIndex + 1) % this.buttons.length;
+    } else if (event.key === "ArrowLeft") {
+      this.activeIndex =
+        (this.activeIndex - 1 + this.buttons.length) % this.buttons.length;
+    } else {
+      return;
+    }
+
+    this.updateUI();
+    this.buttons[this.activeIndex].focus();
   }
 
   bindEvents() {
     this.buttons.forEach((btn, index) => {
       btn.addEventListener("click", () => this.onTabClick(index));
+      btn.addEventListener("keydown", (event) => this.onKeyDown(event));
     });
   }
 }
