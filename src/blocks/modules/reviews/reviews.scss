@@ -1,0 +1,113 @@
+@import "../../../styles/helpers/functions";
+@import "../../../styles/helpers/mixins";
+@import "../../../styles/helpers/variables";
+
+.bordered__grid {
+  --columns: 1;
+  --itemPaddingY: #{fluid(80, 40)};
+
+  display: grid;
+  grid-template-columns: repeat(var(--columns), 1fr);
+
+  &--2-cols {
+    --columns: 2;
+  }
+
+  &--3-cols {
+    --columns: 3;
+    --itemPaddingX: #{rem(50)};
+
+    @include laptop {
+      --itemPaddingX: #{rem(40)};
+    }
+
+    @include tablet {
+      --columns: 1;
+
+      .bordered__grid-item:not(:last-child) {
+        border-bottom: var(--border);
+      }
+    }
+
+    @include tablet-above {
+      .bordered__grid-item {
+        //выбираем элементы с первой и второй колонки
+        &:nth-child(3n - 2),
+        &:nth-child(3n - 1) {
+          padding-right: var(--itemPaddingX);
+          border-right: var(--border);
+        }
+        //элементы второй колонки
+        &:nth-child(3n - 1) {
+          @include full-vw-centered-line(bottom);
+        }
+        //выбираем элементы во 2 и 3 колонке
+        &:nth-child(3n - 1),
+        &:nth-child(3n) {
+          padding-left: var(--itemPaddingX);
+          border-left: var(--border);
+        }
+      }
+    }
+  }
+
+  &-item {
+    padding-block: var(--itemPaddingY);
+  }
+}
+.review-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: rem(40);
+  max-width: rem(600);
+  margin-inline: auto;
+
+  @include laptop {
+    row-gap: rem(30);
+  }
+
+  &__author {
+    --imageSize: #{rem(60)};
+
+    @include laptop {
+      --imageSize: #{rem(50)};
+    }
+  }
+  &__body {
+    padding: fluid(30, 20);
+    padding-top: fluid(50, 30);
+    color: var(--color-light);
+    text-align: center;
+    position: relative;
+  }
+  &__rating-view {
+    @include abs-center;
+    top: 0;
+  }
+}
+.rating-view {
+  display: inline-flex;
+  column-gap: rem(7);
+  padding: rem(10) rem(16);
+  border-radius: rem(100);
+  border: var(--border);
+  background-color: var(--color-dark);
+
+  @include laptop {
+    column-gap: rem(4);
+    padding: rem(8) rem(12);
+  }
+  &__star {
+    --size: #{rem(24)};
+    @include square(var(--size));
+    background: url("../img/sprites/star-gray.svg") center/contain no-repeat;
+
+    @include laptop {
+      --size: #{rem(20)};
+    }
+    &.is-active {
+      background: url("../img/sprites/Shape.svg") center/contain no-repeat;
+    }
+  }
+}
