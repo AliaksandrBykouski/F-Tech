@@ -58,3 +58,28 @@
     }
   }
 }
+.circle-icon {
+  position: relative;
+  --circleSize: #{rem(52)}; //переменная для кружка
+  --circleMarginLeft: #{rem(20)}; // переменная для маржина
+  position: relative;
+  padding-right: calc(var(--circleMarginLeft) + var(--circleSize));
+  min-height: var(--circleSize);
+  &::after {
+    // создаем стрелку в желтом кружке
+    @include square(var(--circleSize)); // размер кружка
+    @include abs-y; // для позиционирования кружка
+    content: "";
+    right: 0;
+    background: url("../img/sprites/arrow-top-right-black.svg") center no-repeat
+      var(--color-accent);
+    border-radius: 50%;
+  }
+  @include laptop {
+    --circleSize: #{rem(44)};
+    --circleMarginLeft: #{rem(14)};
+  }
+  @include mobile {
+    --circleSize: #{rem(40)};
+  }
+}
