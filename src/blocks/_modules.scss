@@ -1,9 +1,13 @@
+// header
 @use "modules/header/header";
+// page home
 @use "modules/hero/hero.scss";
 @use "modules/section/section.scss";
 @use "modules/blog/blog.scss";
 @use "modules/resourses/resourses.scss";
 @use "modules/reviews/reviews.scss";
 @use "modules/abaut/abaut.scss";
-
+// page news
+@use "modules/hero-alt/hero-alt.scss";
+// footer
 @use "modules/footer/footer";

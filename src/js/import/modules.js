@@ -1,6 +1,5 @@
-import "%modules%/header/header.js";
-import "%modules%/blog/blog.js";
-
+import Header from "../../blocks/modules/header/header";
 import TabsCollection from "../../blocks/modules/blog/blog";
 
+new Header();
 new TabsCollection();
