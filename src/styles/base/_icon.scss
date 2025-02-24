@@ -1,0 +1,39 @@
+@use "../helpers/functions" as *;
+@use "../helpers/mixins" as *;
+@use "../helpers/media" as *;
+
+.icon {
+  display: inline-flex;
+  align-items: center;
+  column-gap: rem(10);
+  &::after {
+    --size: #{rem(24)};
+
+    @include square(var(--size));
+
+    content: "";
+    flex-shrink: 0; //элемент не будет уменьшаться
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    @include laptop {
+      --size: #{rem(20)};
+    }
+  }
+
+  &--yellow-arrow {
+    &::after {
+      background-image: url("../img/sprites/arrow-top-right-yellow.svg");
+    }
+  }
+  &--yellow-eye {
+    &::after {
+      background-image: url("../img/sprites/eye-yellow.svg");
+    }
+  }
+  &--gray-arrow-down {
+    &::after {
+      background-image: url("../img/sprites/icon--gray-arrow-down.svg");
+    }
+  }
+}

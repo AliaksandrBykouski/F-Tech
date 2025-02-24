@@ -11,6 +11,26 @@
 
   &--2-cols {
     --columns: 2;
+    --itemPaddingX: #{rem(80)};
+    @include laptop {
+      --itemPaddingX: #{rem(50)};
+    }
+    @include mobile-above {
+      .bordered__grid-item:nth-child(odd) {
+        padding-right: var(--itemPaddingX);
+        border-right: var(--border);
+      }
+      .bordered__grid-item:nth-child(even) {
+        padding-left: var(--itemPaddingX);
+        @include full-vw-centered-line(bottom, auto, 100%, 50%);
+      }
+    }
+    @include mobile {
+      --columns: 1;
+      .bordered__grid-item:not(:last-child) {
+        border-bottom: var(--border);
+      }
+    }
   }
 
   &--3-cols {

@@ -37,6 +37,9 @@
       border-block: var(--border);
     }
   }
+  &__link {
+    max-width: rem(360);
+  }
 }
 .tag {
   @include fluid-text(20, 14);
