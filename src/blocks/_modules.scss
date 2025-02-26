@@ -12,5 +12,10 @@
 @use "modules/video/video.scss";
 // page blog-details
 @use "modules/blog-details/blog-details.scss";
+// page podcasts
+@use "modules/podcasts/podcasts.scss";
+@use "modules/podcasts-video/podcasts-video.scss";
+//page contacts
+@use "modules/contacts/contacts.scss";
 // footer
 @use "modules/footer/footer";
